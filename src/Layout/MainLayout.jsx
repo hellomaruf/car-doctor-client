@@ -1,8 +1,10 @@
 import { Outlet } from "react-router-dom";
+import Nav from "../Components/Nav";
 
 function MainLayout() {
   return (
-    <div>
+      <div>
+          <Nav/>
       <Outlet />
     </div>
   );
