@@ -2,19 +2,44 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/carlogo.svg";
 const link = (
   <>
-    <NavLink className="mr-5 p-2" to="/">
+    <NavLink
+      className={({ isActive }) =>
+        isActive ? "mr-5 p-2 text-orange-500 font-semibold" : "mr-5 p-2"
+      }
+      to="/"
+    >
       Home
     </NavLink>
-    <NavLink className="mr-5 p-2" to="/about">
+    <NavLink
+      className={({ isActive }) =>
+        isActive ? "mr-5 p-2 text-orange-500 font-semibold" : "mr-5 p-2"
+      }
+      to="/about"
+    >
       About
     </NavLink>
-    <NavLink className="mr-5 p-2" to="/service">
+    <NavLink
+      className={({ isActive }) =>
+        isActive ? "mr-5 p-2 text-orange-500 font-semibold" : "mr-5 p-2"
+      }
+      to="/service"
+    >
       Service
     </NavLink>
-    <NavLink className="mr-5 p-2" to="/blog">
+    <NavLink
+      className={({ isActive }) =>
+        isActive ? "mr-5 p-2 text-orange-500 font-semibold" : "mr-5 p-2"
+      }
+      to="/blog"
+    >
       Blog
     </NavLink>
-    <NavLink className="mr-5 p-2" to="/content">
+    <NavLink
+      className={({ isActive }) =>
+        isActive ? "mr-5 p-2 text-orange-500 font-semibold" : "mr-5 p-2"
+      }
+      to="/content"
+    >
       Content
     </NavLink>
   </>
