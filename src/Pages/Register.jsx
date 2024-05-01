@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import img from "../assets/login/login.svg";
-function Login() {
-  const handleLogin = () => {};
-  const handleGoogleSignIn = () => {};
-  const handleGithubSignIn = () => {};
+
+function Register() {
+  const handleRegister = () => {};
   return (
     <div>
       <div className="max-w-7xl mx-auto">
@@ -18,17 +17,29 @@ function Login() {
           <div data-aos="fade-left" data-aos-duration="900" className="">
             <div className=" space-y-2">
               <h2 className="font-bold text-2xl lg:text-3xl ">
-                Login to your Account
+                Sign up your Account
               </h2>
               <p>Welcome back select mathod to Login</p>
             </div>
 
             <form
-              onSubmit={handleLogin}
+              onSubmit={handleRegister}
               data-aos="fade-left"
               data-aos-duration="1000"
               className=" col-span-1  mt-2 "
             >
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Enter your name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -62,25 +73,16 @@ function Login() {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-[#FF3811] text-white">Login</button>
+                <button className="btn bg-[#FF3811] text-white">Sign Up</button>
               </div>
               <div className="text-center pt-2">
                 <p>
                   {" "}
-                  Don’t have an account?{" "}
-                  <Link to="/register" className="text-[#F6891F] font-bold">
-                    Create an account
+                  Already have an account?{" "}
+                  <Link to="/login" className="text-[#F6891F] font-bold">
+                    Please login
                   </Link>
                 </p>
-              </div>
-              <div className="divider py-6">Or</div>
-              <div className=" mt-4 space-x-4 text-center ">
-                <button onClick={handleGoogleSignIn} className="btn">
-                  Google <img className="w-4" src="/assets/google.png" alt="" />
-                </button>
-                <button onClick={handleGithubSignIn} className="btn">
-                  Github <img className="w-4" src="/assets/github.png" alt="" />
-                </button>
               </div>
             </form>
           </div>
@@ -90,4 +92,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

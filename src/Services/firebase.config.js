@@ -1,21 +1,19 @@
-// Import the functions you need from the SDKs you need
+// Import the functions you need from the  SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth } from "firebase/auth";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+console.log(import.meta.env.VITE_apiKey);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyArP2LamOk8zNFrsJx6eNp4W98zlX9XHLQ",
-  authDomain: "car-doctor-3767f.firebaseapp.com",
-  projectId: "car-doctor-3767f",
-  storageBucket: "car-doctor-3767f.appspot.com",
-  messagingSenderId: "571712293921",
-  appId: "1:571712293921:web:13c9d2f20ade25fdc7e760",
-  measurementId: "G-5JVTM8R93Z"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
+  measurementId: import.meta.env.VITE_measurementId,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const auth = getAuth(app);
