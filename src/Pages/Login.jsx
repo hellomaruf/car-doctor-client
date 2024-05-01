@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import img from "../assets/login/login.svg";
+import { useContext } from "react";
+import { AuthContext } from "../Services/AuthProvider";
 function Login() {
-  const handleLogin = () => {};
+  const { loginUser } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    loginUser(email, password)
+      .then((res) => console.log(res.user))
+      .then((error) => console.log(error));
+  };
   const handleGoogleSignIn = () => {};
   const handleGithubSignIn = () => {};
   return (
