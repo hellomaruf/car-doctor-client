@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/carlogo.svg";
 const link = (
   <>
@@ -78,10 +78,13 @@ function Nav() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end space-x-3  ">
           <a className="btn bg-white border-2 border-orange-500 text-orange-500">
             Appointment
           </a>
+          <Link to='/login' className="btn bg-white border-2 border-orange-500 text-orange-500">
+            Login
+          </Link>
         </div>
       </div>
     </div>
