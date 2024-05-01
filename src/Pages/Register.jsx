@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
 import img from "../assets/login/login.svg";
+import { useContext } from "react";
+import { AuthContext } from "../Services/AuthProvider";
 
 function Register() {
-  const handleRegister = () => {};
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    // const name = form.name.value
+    const email = form.email.value;
+    const password = form.password.value;
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .then((error) => console.log(error));
+  };
   return (
     <div>
       <div className="max-w-7xl mx-auto">

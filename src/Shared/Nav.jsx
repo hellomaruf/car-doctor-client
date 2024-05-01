@@ -1,5 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/carlogo.svg";
+import { useContext } from "react";
+import { AuthContext } from "../Services/AuthProvider";
 const link = (
   <>
     <NavLink
@@ -45,6 +47,8 @@ const link = (
   </>
 );
 function Nav() {
+  const {name} = useContext(AuthContext)
+  console.log(name);
   return (
     <div className="max-w-7xl mx-auto my-4">
       <div className="navbar bg-base-100">
