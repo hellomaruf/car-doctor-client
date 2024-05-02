@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -32,9 +33,9 @@ function Services() {
                   <p className="text-lg text-orange-600 font-medium ">
                     Price : {item?.price}
                   </p>
-                  <button className="btn rounded-full bg-orange-600 text-white hover:bg-orange-500">
-                    <i className="ri-arrow-right-line"></i>
-                  </button>
+                  <Link to={`/checkout/${item?._id}`} className="btn rounded-full bg-orange-600 text-white hover:bg-orange-500">
+                  <i className="ri-arrow-right-line"></i>
+                  </Link>
                 </div>
               </div>
             </div>
