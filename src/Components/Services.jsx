@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function Services() {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("services.json")
+    fetch("http://localhost:3000/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
