@@ -11,7 +11,7 @@ function Checkout() {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const price = e.target.price.value;
-    const date = e.target.price.value;
+    const date = e.target.date.value;
     const order = {
       name,
       email,
@@ -20,6 +20,15 @@ function Checkout() {
       service: loadedData?._id,
     };
     console.log(order);
+    fetch("http://localhost:3000/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <div className="max-w-7xl mx-auto my-20">
