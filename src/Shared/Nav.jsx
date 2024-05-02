@@ -47,8 +47,12 @@ const link = (
   </>
 );
 function Nav() {
-  const {name} = useContext(AuthContext)
-  console.log(name);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => console.log())
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="max-w-7xl mx-auto my-4">
       <div className="navbar bg-base-100">
@@ -86,9 +90,18 @@ function Nav() {
           <a className="btn bg-white border-2 border-orange-500 text-orange-500">
             Appointment
           </a>
-          <Link to='/login' className="btn bg-white border-2 border-orange-500 text-orange-500">
-            Login
-          </Link>
+          {user ? (
+            <button onClick={handleLogout} className="btn">
+              Log out
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className="btn bg-white border-2 border-orange-500 text-orange-500"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

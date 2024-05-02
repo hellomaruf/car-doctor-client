@@ -12,20 +12,22 @@ function Checkout() {
     const email = e.target.email.value;
     const price = e.target.price.value;
     const date = e.target.date.value;
-    const order = {
-      name,
+    const booking = {
+      customerName: name,
       email,
       date,
       price,
-      service: loadedData?._id,
+      img: loadedData?.img,
+      servide_title: loadedData?.title,
+      service_id: loadedData?._id,
     };
-    console.log(order);
+
     fetch("http://localhost:3000/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(order),
+      body: JSON.stringify(booking),
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
